@@ -270,16 +270,16 @@ namespace PKIAssessment.Core
             string base64 = Convert.ToBase64String(data);
             var pem = new System.Text.StringBuilder();
 
-            pem.AppendLine(dataType);
-            
+            pem.AppendLine($"-----BEGIN {dataType}-----");
+
             const int lineLength = 64;
             for (int i = 0; i < base64.Length; i += lineLength)
             {
                 int length = Math.Min(lineLength, base64.Length - i);
                 pem.AppendLine(base64.Substring(i, length));
             }
-            
-            pem.AppendLine(dataType);
+
+            pem.AppendLine($"-----END {dataType}-----");
             return pem.ToString();
         }
     }
