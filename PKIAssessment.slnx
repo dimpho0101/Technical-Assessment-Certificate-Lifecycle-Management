@@ -1,0 +1,5 @@
+<Solution>
+  <Project Path="PKIAssessment.Core/PKIAssessment.Core.csproj" />
+  <Project Path="PKIAssessment.Tests/PKIAssessment.Tests.csproj" />
+  <Project Path="PKIAssessment.Demo/PKIAssessment.Demo.csproj" />
+</Solution>
