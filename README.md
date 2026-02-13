@@ -46,3 +46,41 @@ CRL generation and revocation behavior
 End-to-end lifecycle flow
 
 Where possible, I verified cryptographic validity (e.g., csr.Verify() and eeCert.Verify(caCert.GetPublicKey())) rather than just checking object properties.
+
+## Build, Test, and Run Instructions
+### 1. Build the Application
+
+dotnet build
+
+
+### 2. Run Tests
+
+dotnet test
+
+Expected: **17/17 tests passing**
+
+### 3. Run the Demo
+
+dotnet run --project PKIAssessment.Demo
+
+## What You'll See
+
+1. **Generate Root CA Key Pair** (RSA 2048-bit)
+2. **Issue Self-Signed Root CA Certificate** (10 years validity)
+3. **Generate End-Entity Key Pair**
+4. **Generate Certificate Signing Request (CSR)**
+5. **Issue End-Entity Certificate from CSR** (1 year validity)
+6. **Generate Empty Certificate Revocation List (CRL)**
+7. **Revoke Certificate and Update CRL**
+
+## Test Coverage
+
+- Key generation (3 tests)
+- Self-signed certificates (4 tests)
+- CRL generation (3 tests)
+- End-entity certificates (4 tests)
+- Certificate revocation (3 tests)
+- Full lifecycle (1 test)
+
+
+
